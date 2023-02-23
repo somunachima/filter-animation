@@ -7,6 +7,7 @@ function Movie({ movie }) {
           animate={{ opacity: 1, scale: 1 }}
           initial={{ opactity: 0, scale: 0 }}
           exit={{ opacity: 0, scale: 0 }}
+          transition={{ duration: 0.8 }}
         >
             <h2>{movie.title}</h2>
             <img
