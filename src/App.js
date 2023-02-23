@@ -1,7 +1,8 @@
 import './App.css';
 import { useEffect, useState } from "react";
-import Movie from './movie';
-import Filter from './filter';
+import Movie from './Movie';
+import Filter from './Filter';
+import { motion } from "framer-motion";
 
 function App() {
 
@@ -27,12 +28,13 @@ function App() {
         popular={popular}
         setFiltered={setFiltered}
         activeGenre={activeGenre}
-        setActiveGenre={setActiveGenre} />
-      <div className="popular-movies">
-        {popular.map(movie => {
+        setActiveGenre={setActiveGenre}
+      />
+      <motion.div layout className="popular-movies">
+        {filtered.map((movie) => {
           return <Movie key={movie.id} movie={movie} />;
         })}
-      </div>
+      </motion.div>
     </div>
   );
 }
